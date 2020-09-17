@@ -8,6 +8,7 @@ import android.util.Log;
 import com.facebook.react.HeadlessJsTaskService;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
+import com.mixpanel.android.mpmetrics.MixpanelFCMMessagingService;
 
 import io.invertase.firebase.Utils;
 
