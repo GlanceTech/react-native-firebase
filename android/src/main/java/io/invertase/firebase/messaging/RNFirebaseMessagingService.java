@@ -32,7 +32,11 @@ public class RNFirebaseMessagingService extends FirebaseMessagingService {
   public void onMessageReceived(RemoteMessage message) {
     Log.d(TAG, "onMessageReceived event received");
 
-    if (message.getNotification() != null) {
+    if (message.getData().containsKey("mp_message")) {
+      //Log.d(TAG, "mp notificaton");
+      MixpanelFCMMessagingService.showPushNotification(getApplicationContext(), message.toIntent());
+    }else if (message.getNotification() != null) {
+      //Log.d(TAG, "fcm notificaton");
       // It's a notification, pass to the Notifications module
       Intent notificationEvent = new Intent(REMOTE_NOTIFICATION_EVENT);
       notificationEvent.putExtra("notification", message);
