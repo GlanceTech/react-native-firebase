@@ -35,7 +35,6 @@ public class RNFirebaseMessagingService extends FirebaseMessagingService {
 
     if (message.getData().containsKey("mp_message")) {
       //Log.d(TAG, "mp notificaton");
-      //Log.d(TAG, "mp notificaton");
       MixpanelFCMMessagingService.showPushNotification(getApplicationContext(), message.toIntent());
     }else if (message.getNotification() != null) {
       //Log.d(TAG, "fcm notificaton");
